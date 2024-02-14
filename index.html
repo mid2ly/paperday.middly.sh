@@ -51,9 +51,13 @@
             padding: calc(var(--default-size) * 0.03);
             box-sizing: border-box;
             row-gap: calc(var(--default-size) * 0.03);
+        }
 
-            padding-top: calc(env(safe-area-inset-top) + calc(var(--default-size) * 0.03));
-            padding-bottom: calc(env(safe-area-inset-bottom) + calc(var(--default-size) * 0.03));
+        /* iOS only */
+        @supports (-webkit-touch-callout: none) {
+            .container {
+                height: -webkit-fill-available !important;
+            }
         }
 
         h1 {
